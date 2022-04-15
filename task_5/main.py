@@ -1,3 +1,4 @@
+"""Roguelike: Simple version"""
 import game
 
 kitchen = game.Room("Kitchen")

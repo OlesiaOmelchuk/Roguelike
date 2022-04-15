@@ -3,19 +3,20 @@
 
 class Room:
     """Class Room"""
+
     def __init__(self, name: str) -> None:
         self.name = name
         self.connected_rooms = []
         self.item = None
         self.character = None
 
-    def set_description(self, description: str):
+    def set_description(self, description: str) -> None:
         """
         Sets description to the room.
         """
         self.description = description
 
-    def get_details(self):
+    def get_details(self) -> None:
         """
         Prints info about current room.
         """
@@ -27,13 +28,13 @@ class Room:
             direction = info[1]
             print(f'The {room.name} is {direction}')
 
-    def link_room(self, room: object, direction: str):
+    def link_room(self, room: object, direction: str) -> None:
         """
         Links one room to another.
         """
         self.connected_rooms.append((room, direction))
 
-    def set_character(self, character: object):
+    def set_character(self, character: object) -> None:
         """
         Sets the character in the current room.
         """
@@ -73,11 +74,12 @@ class Room:
 
 class Character:
     """Class Character"""
+
     def __init__(self, name: str, description: str) -> None:
         self.name = name
         self.description = description
 
-    def describe(self):
+    def describe(self) -> None:
         """
         Prints info about the character.
         """
@@ -89,19 +91,19 @@ class Enemy(Character):
     """Class Enemy - child of class Character"""
     defeated = 0
 
-    def set_conversation(self, conversation: str):
+    def set_conversation(self, conversation: str) -> None:
         """
         Sets conversation for the character.
         """
         self.conversation = conversation
 
-    def set_weakness(self, weapon: str):
+    def set_weakness(self, weapon: str) -> None:
         """
         Sets weakness for the character.
         """
         self.weakness = weapon
 
-    def talk(self):
+    def talk(self) -> None:
         """
         Prints the conversations of the character.
         """
@@ -119,7 +121,7 @@ class Enemy(Character):
         print(f'{self.name} crushes you, puny adventurer!')
         return False
 
-    def get_defeated(self):
+    def get_defeated(self) -> int:
         """
         Returns number of defeated enemys.
         """
@@ -128,6 +130,7 @@ class Enemy(Character):
 
 class Item:
     """Class Item"""
+
     def __init__(self, name) -> None:
         self.name = name
 
@@ -143,7 +146,7 @@ class Item:
         """
         return self.name
 
-    def describe(self):
+    def describe(self) -> None:
         """
         Prints description of the item.
         """
